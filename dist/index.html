@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+      <title>Snowfall</title>
+      <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+      <link rel="stylesheet" href="css/app.css">
+  </head>
+
+  <body class="darkBg">
+    <p id="demo" class="points">0</p>
+    <h1 class="title">404</h1>
+    <div class="subtitle">sorry, man. this page does not exist</div>
+
+
+    <script src="../dist/snowfall.jquery.min.js"></script>
+    <script src="js/bundle.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+          var button = $('#button');
+          var counter = 0;
+
+          function add() {
+              return counter += 1;
+          }
+
+          //Start the snow default options you can also make it snow in certain elements, etc.
+          $(document).snowfall();
+              $(document).snowfall('clear');
+              document.body.className  = "darkBg";
+              var snowfall = document.getElementsByClassName('snowfall-flakes'); //gets the collection of snowflakes
+              var flake = $(document).snowfall({
+                deviceorientation : true,
+                round : true,
+                minSize: 40,
+                maxSize: 70,
+                minSpeed: 1,
+                maxSpeed: 7,
+                flakeCount : 70
+              });
+
+              var arr = Array.prototype.slice.call(snowfall, 0); //turns the collection of snowflakes to an array
+              arr.forEach(function(item, index, array){
+                $(item).click(function () {
+                  $(item).hide();
+                })
+              });
+
+              $(snowfall).click(function () {
+                document.getElementById("demo").innerHTML = add();
+              });
+        });
+     </script>
+  </body>
+</html>

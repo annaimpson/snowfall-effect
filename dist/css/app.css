@@ -5821,7 +5821,7 @@ html, body {
   height: 120%; }
 
 .darkBg {
-  background: #2d0f0f;
+  background: black;
   position: absolute;
   top: -50px;
   overflow-y: hidden;
@@ -5830,11 +5830,13 @@ html, body {
 .title {
   font-size: 200px;
   text-align: center;
-  margin-top: 10%; }
+  margin-top: 10%;
+  color: white; }
 
 .subtitle {
   font-size: 17px;
-  text-align: center; }
+  text-align: center;
+  color: white; }
 
 .points {
   color: white;

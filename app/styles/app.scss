@@ -19,18 +19,22 @@ img {
 html,body {
   padding:0;
   margin:0;
-  min-height: 100%;
-  height:100%;
+  min-height: 120%;
+  height: 120%;
 }
 
 .darkBg {
   background:#2d0f0f;
+  position: absolute;
+  top: -50px;
+  overflow-y: hidden;
+  min-width: 100%;
 }
 
 .title {
   font-size: 200px;
   text-align: center;
-  margin-top: 35%;
+  margin-top: 10%;
 }
 
 .subtitle {
@@ -40,5 +44,11 @@ html,body {
 
 .points {
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  //margin-top: 75px;
+  margin: 75px 0 0 20px;
+}
+
+.snowfall-flakes {
+  cursor: pointer;
 }

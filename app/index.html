@@ -30,17 +30,24 @@
           $(document).snowfall();
               $(document).snowfall('clear');
               document.body.className  = "darkBg";
-              var snowfall = document.getElementsByClassName('snowfall-flakes');
+              var snowfall = document.getElementsByClassName('snowfall-flakes'); //gets the collection of snowflakes
               var flake = $(document).snowfall({
                 deviceorientation : true,
                 round : true,
-                minSize: 35,
-                maxSize:80,
+                minSize: 40,
+                maxSize: 70,
                 minSpeed: 1,
                 maxSpeed: 7,
-                flakeCount : 5
+                flakeCount : 70
               });
-              console.log(snowfall);
+
+              var arr = Array.prototype.slice.call(snowfall, 0); //turns the collection of snowflakes to an array
+              arr.forEach(function(item, index, array){
+                $(item).click(function () {
+                  $(item).hide();
+                })
+              });
+
               $(snowfall).click(function () {
                 document.getElementById("demo").innerHTML = add();
               });
